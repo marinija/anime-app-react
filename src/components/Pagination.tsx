@@ -10,7 +10,7 @@ const Pagination = ({ pagination, onPageChange }: PaginationProps) => {
             <button
                 disabled={current_page === 1}
                 onClick={() => onPageChange(current_page - 1)}
-                className="px-3 py-1 border rounded disabled:opacity-50"
+                className="px-3 py-1 border rounded disabled:opacity-50 cursor-pointer"
             >
                 Prev
             </button>
@@ -18,7 +18,7 @@ const Pagination = ({ pagination, onPageChange }: PaginationProps) => {
             {pages.slice(Math.max(0, current_page - 3), current_page + 2).map(page => (
                 <button
                     key={page}
-                    className={`px-3 py-1 border rounded ${page === current_page ? "bg-gray-700 text-white" : ""}`}
+                    className={`px-3 py-1 border rounded ${page === current_page ? "bg-gray-700 text-white" : "cursor-pointer"}`}
                     onClick={() => onPageChange(page)}
                 >
                     {page}
@@ -28,7 +28,7 @@ const Pagination = ({ pagination, onPageChange }: PaginationProps) => {
             <button
                 disabled={!has_next_page}
                 onClick={() => onPageChange(current_page + 1)}
-                className="px-3 py-1 border rounded disabled:opacity-50"
+                className="px-3 py-1 border rounded disabled:opacity-50 cursor-pointer"
             >
                 Next
             </button>

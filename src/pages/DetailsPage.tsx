@@ -40,7 +40,7 @@ const DetailsPage = () => {
                             className="absolute top-0 left-0 w-full h-full"
                             allow="autoplay; fullscreen"
                             allowFullScreen
-                            title={`${anime.title} Trailer`}
+                            title={`${anime?.title} Trailer`}
                         ></iframe>
                     </div>
                 )}
