@@ -42,7 +42,7 @@ const Navbar = () => {
                         <div className="">
                             <div className="flex space-x-2">
                                 <NavLink to="/" className={linkClass}>
-                                    Home
+                                    Anime
                                 </NavLink>
                                 <NavLink to="/manga" className={linkClass}>
                                     Manga

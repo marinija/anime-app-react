@@ -4,6 +4,7 @@ import type { IAnime } from '../models/anime.model.ts';
 import Card from '../components/Card.tsx';
 import Pagination from '../components/Pagination.tsx';
 import { useSearchParams } from 'react-router-dom';
+import LatestNews from '../components/LatestNews.tsx';
 
 const HomePage = () => {
     const [topAnime, setTopAnime] = useState<IPager>();
@@ -49,7 +50,7 @@ const HomePage = () => {
         <section className="grid grid-cols-12 gap-5">
             {searchGames ? (
                 <div className="col-span-8">
-                    <h2 className=" text-2xl font-bold">Search ANIMES</h2>
+                    <h2 className="text-2xl font-bold">Search ANIMES</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                         {searchGames.data?.map((anime: IAnime) => (
                             <Card key={anime.mal_id} anime={anime} shortBackground={true}/>
@@ -60,7 +61,7 @@ const HomePage = () => {
                 </div>
             ) : (
                 <div className="col-span-8">
-                    <h2 className=" text-2xl font-bold">TOP ANIMES</h2>
+                    <h2 className="text-2xl font-bold">TOP ANIMES</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                         {topAnime?.data?.map((anime: IAnime) => (
                             <Card key={anime.mal_id} anime={anime} shortBackground={true}/>
@@ -72,7 +73,7 @@ const HomePage = () => {
             )}
 
             <aside className="col-span-4">
-
+                <LatestNews />
             </aside>
         </section>
     );
